@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Serta Mulia</title>
+
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body>
+
+    <div class="music-container">
+
+        <h1>Serta Mulia 🎵</h1>
+
+        <p class="music-subtitle">
+            Musik untuk menemani hari spesial ini 💗
+        </p>
+
+        <!-- LOVE YANG BERGERAK -->
+        <div class="floating-love">
+            <span>💗</span>
+            <span>💕</span>
+            <span>💖</span>
+            <span>💗</span>
+            <span>💕</span>
+            <span>💖</span>
+            <span>💗</span>
+            <span>💕</span>
+        </div>
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-card">
+
+            <div class="music-icon">
+                🎵
+            </div>
+
+            <h2>Serta Mulia</h2>
+
+            <p>Putar musiknya 💕</p>
+
+            <audio id="music">
+                <source src="music/serta mulia.mp4" type="audio/mp4">
+            </audio>
+
+            <button id="playButton" class="play-button">
+                ▶
+            </button>
+
+            <input 
+                type="range" 
+                id="progress" 
+                value="0" 
+                min="0" 
+                max="100"
+            >
+
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="back">
+            Kembali
+        </a>
+
+    </div>
+
+
+    <script>
+
+        const music = document.getElementById("music");
+        const playButton = document.getElementById("playButton");
+        const progress = document.getElementById("progress");
+        const currentTime = document.getElementById("currentTime");
+        const duration = document.getElementById("duration");
+
+
+        // Tombol Play / Pause
+        playButton.addEventListener("click", function() {
+
+            if (music.paused) {
+                music.play();
+                playButton.innerHTML = "❚❚";
+            } else {
+                music.pause();
+                playButton.innerHTML = "▶";
+            }
+
+        });
+
+
+        // Durasi musik
+        music.addEventListener("loadedmetadata", function() {
+
+            duration.textContent = formatTime(music.duration);
+
+        });
+
+
+        // Pergerakan progress
+        music.addEventListener("timeupdate", function() {
+
+            const progressValue =
+                (music.currentTime / music.duration) * 100;
+
+            progress.value = progressValue;
+
+            currentTime.textContent =
+                formatTime(music.currentTime);
+
+        });
+
+
+        // Bisa digeser
+        progress.addEventListener("input", function() {
+
+            const time =
+                (progress.value / 100) * music.duration;
+
+            music.currentTime = time;
+
+        });
+
+
+        // Kalau lagu selesai
+        music.addEventListener("ended", function() {
+
+            playButton.innerHTML = "▶";
+            progress.value = 0;
+
+        });
+
+
+        // Format waktu
+        function formatTime(seconds) {
+
+            if (isNaN(seconds)) {
+                return "0:00";
+            }
+
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+
+            return minutes + ":" + 
+                (secs < 10 ? "0" : "") + secs;
+
+        }
+
+    </script>
+
+</body>
+</html>

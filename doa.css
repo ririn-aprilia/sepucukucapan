@@ -1,0 +1,367 @@
+/* =========================
+   HALAMAN UCAPAN / DOA
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fde7f0;
+    color: #8f4b61;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.doa-container {
+    min-height: 100vh;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 15%, white 0 5px, transparent 6px),
+        radial-gradient(circle at 90% 25%, white 0 5px, transparent 6px),
+        radial-gradient(circle at 15% 85%, white 0 5px, transparent 6px),
+        #fde7f0;
+}
+
+
+/* =========================
+   KARTU
+========================= */
+
+.card {
+    width: 700px;
+    max-width: 90%;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 8px solid #f7c1d4;
+
+    border-radius: 12px;
+
+    padding: 35px 45px 30px;
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+        0 15px 35px rgba(180, 80, 110, 0.20),
+        0 3px 0 #f3b2c8;
+
+    text-align: center;
+}
+
+
+/* =========================
+   BAGIAN ATAS KARTU
+========================= */
+
+.card-top {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fde0ea;
+
+    border: 3px solid #f6b4ca;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+.card h1 {
+    margin: 8px 0;
+
+    color: #c65376;
+
+    font-size: 36px;
+}
+
+
+.line {
+    width: 100px;
+    height: 3px;
+
+    margin: 15px auto 20px;
+
+    background: #f2b4c9;
+
+    border-radius: 10px;
+}
+
+
+.card h2 {
+    margin-bottom: 28px;
+
+    color: #bd5b78;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   ISI UCAPAN
+========================= */
+
+.message {
+    text-align: left;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #79515e;
+}
+
+
+.message p {
+    margin-bottom: 20px;
+}
+
+
+.closing {
+    text-align: center;
+
+    color: #bd5b78;
+
+    font-weight: bold;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   BAGIAN BAWAH KARTU
+========================= */
+
+.card-bottom {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 2px dashed #f4bfd0;
+
+    font-size: 23px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================
+   LOVE DI SEKITAR KARTU
+========================= */
+
+.heart {
+    position: absolute;
+
+    font-size: 25px;
+
+    z-index: 1;
+
+    animation: heartMove 4s ease-in-out infinite;
+}
+
+
+/* posisi love */
+
+.heart-1 {
+    top: 12%;
+    left: 10%;
+
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    top: 25%;
+    right: 10%;
+
+    animation-delay: 0.7s;
+}
+
+.heart-3 {
+    top: 48%;
+    left: 5%;
+
+    animation-delay: 1.2s;
+}
+
+.heart-4 {
+    top: 55%;
+    right: 5%;
+
+    animation-delay: 1.8s;
+}
+
+.heart-5 {
+    bottom: 15%;
+    left: 12%;
+
+    animation-delay: 2.4s;
+}
+
+.heart-6 {
+    bottom: 12%;
+    right: 13%;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   ANIMASI LOVE
+========================= */
+
+@keyframes heartMove {
+
+    0% {
+        transform: translateY(0) rotate(-5deg);
+
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg) scale(1.15);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg);
+
+        opacity: 0.7;
+    }
+
+}
+
+
+/* =========================
+   TOMBOL KEMBALI
+========================= */
+
+.back {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 30px;
+
+    text-decoration: none;
+
+    color: #b94f70;
+
+    background: white;
+
+    border: 2px solid #f4b5ca;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    z-index: 3;
+}
+
+
+.back:hover {
+    background: #f8bfd2;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .doa-container {
+        padding: 35px 15px;
+    }
+
+    .card {
+        max-width: 95%;
+
+        padding: 28px 22px 25px;
+
+        border-width: 6px;
+    }
+
+    .card h1 {
+        font-size: 30px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .message {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .heart {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 400px) {
+
+    .card {
+        padding: 25px 18px;
+    }
+
+    .card h1 {
+        font-size: 27px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .card-top {
+        width: 55px;
+        height: 55px;
+    }
+
+}
