@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #d81b60;
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #d81b60;
+    background-color: white;
+    border: 2px solid #f8bbd0;
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+/* =========================
+   RESPONSIVE UNTUK HP
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        min-height: 100vh;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .container h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Tombol dibuat memanjang ke bawah */
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .menu a {
+        width: 80%;
+        max-width: 300px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+}

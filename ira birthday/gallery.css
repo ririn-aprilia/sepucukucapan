@@ -1,0 +1,182 @@
+/* =========================
+   HALAMAN GALLERY
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fde7f0;
+    color: #b94f70;
+}
+
+/* Pembungkus seluruh gallery */
+.gallery-container {
+    min-height: 100vh;
+    padding: 50px 25px;
+    box-sizing: border-box;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ffffff 0 5px, transparent 6px),
+        radial-gradient(circle at 90% 15%, #ffffff 0 5px, transparent 6px),
+        #fde7f0;
+}
+
+/* Judul */
+.gallery-container h1 {
+    margin: 0;
+    font-size: 38px;
+    color: #c65376;
+}
+
+/* Tulisan kecil di bawah judul */
+.subtitle {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #a85a70;
+}
+
+/* Hiasan love */
+.love {
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin: 15px 0 25px;
+}
+
+/* =========================
+   KUMPULAN FOTO
+========================= */
+
+.gallery {
+    max-width: 800px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* =========================
+   KOTAK POLAROID
+========================= */
+
+.photo-box {
+    background: white;
+
+    /* sisi pink + putih */
+    border: 7px solid #f8bfd2;
+
+    padding: 8px 8px 18px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 6px 15px rgba(180, 80, 110, 0.18);
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s;
+}
+
+/* Foto genap sedikit dimiringkan ke arah lain */
+.photo-box:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+/* Saat diarahkan mouse */
+.photo-box:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Foto */
+.photo-box img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 4px solid white;
+}
+
+/* =========================
+   TOMBOL KEMBALI
+========================= */
+
+.back {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 28px;
+
+    text-decoration: none;
+
+    color: #b94f70;
+    background: white;
+
+    border: 2px solid #f4b5ca;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: #f8bfd2;
+    color: white;
+}
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .gallery-container {
+        padding: 35px 15px;
+    }
+
+    .gallery-container h1 {
+        font-size: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .photo-box {
+        border-width: 5px;
+        padding: 6px 6px 14px;
+    }
+
+    .photo-box img {
+        height: 150px;
+    }
+
+    .love {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+}
+
+/* Untuk HP yang sangat kecil */
+@media (max-width: 400px) {
+
+    .gallery {
+        gap: 15px;
+    }
+
+    .photo-box img {
+        height: 125px;
+    }
+
+    .gallery-container h1 {
+        font-size: 26px;
+    }
+}
